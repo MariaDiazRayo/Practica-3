@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Calculadora</title>
+  <meta charset="utf-8">
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="script.js"></script>
+  
+</head>
+
+<body>
+  <div id="calculadora">
+
+    <h1>Calculadora de CORE</h1>
+
+    <b>Número:</b>
+    <input type="text" id="pantalla" onclick="vaciar()">
+
+    <h2 id="info" class="grande" title="Info sobre el número">Info sobre el número</h2>
+  <div id="OpUnitarias">
+    <h3 class="infoOperacion">Operaciones Unitarias</h3>
+    <button id="cuadrado" onclick="cuadrado()"><b>x<sup>2</sup></b></button>
+    <button id="modulo" onclick="mod()"><b>|x|</b></button>
+    <button id="factorial" onclick="fact()"><b>x!</b></button>
+    <br>
+  </div>
+  <div id="OpBinarias">
+    <h3 class="infoOperacion">Operaciones Binarias</h3>
+    <button id="sumatorio" onclick="sumatorio()"><b>Sumatorio</b></button>
+    <button id="ordenar" onclick="ordenar()"><b>Ordenar</b></button>
+    <button id="revertir" onclick="revertir()"><b>Revertir</b></button>
+    <button id="quitar" onclick="quitar()"><b>Quitar</b></button>
+  </div>
+
+  <div id="OpCSV">
+    <h3 class="infoOperacion">Operaciones en formato CSV</h3>
+    <button id="multiplicacion" onclick="mul()"><b>*</b></button>
+    <button id="suma" onclick="add()"><b>+</b></button>
+    <button id="igual" onclick="eq()"><b>=</b></button>
+
+  </div>
+  </div>
+  <footer> María Díaz Rayo </footer>
+
+</body>
+
+</html>
