@@ -38,13 +38,13 @@ let total = 0;
 
 const guardaInput = (numInput) => {
   switch (operador) {
-    case "multiplicador":
+    case "multiplicacion":
       total *= numInput;
       break;
     case "":
       total = numInput;
       break;
-    case "sumador":
+    case "suma":
       total += numInput;
       break;
     default:
@@ -57,7 +57,7 @@ const mul = () => {
   if (validar()) {
     guardaInput(Number(document.getElementById("pantalla").value));
     total = document.getElementById("pantalla").value;
-    operador = "multiplicador";
+    operador = "multiplicacion";
     vaciar();
     rellenar_info();
   }
@@ -66,8 +66,7 @@ const mul = () => {
 const add = () => {
   if (validar()) {
     guardaInput(Number(document.getElementById("pantalla").value));
-    //total = document.getElementById("pantalla").value;
-    operador = "sumador";
+    operador = "suma";
     vaciar();
     rellenar_info();
   }
@@ -86,11 +85,11 @@ const eq = () => {
 const sumatorio = () => {
   if (validar()) {
     let num = document.getElementById("pantalla");
-    let listilla = num.value.split(",");
+    let lista = num.value.split(",");
     let i = 0;
     let suma = 0;
-    while (i < listilla.length) {
-      suma += +listilla[i];
+    while (i < lista.length) {
+      suma += +lista[i];
       i++;
     }
     num.value = suma;
@@ -143,7 +142,6 @@ const rellenar_info = () => {
     document.getElementById("info").innerHTML = "Info: El resultado está entre 100 y 200";
   }
 }
-
 const validar = () => {
   let listaString = document.getElementById("pantalla").value;
   let arrayNumeros = listaString.split(",");
