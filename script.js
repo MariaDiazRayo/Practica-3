@@ -3,34 +3,28 @@ const vaciar = () => {
 }
 
 const cuadrado = () => {
-  if (validar()) {
-    let num = document.getElementById("pantalla");
-    num.value = num.value * num.value;
-    rellenar_info();
-  }
+  let num = document.getElementById("pantalla");
+  num.value = num.value * num.value;
+  rellenar_info();
 }
 const mod = () => {
-  if (validar()) {
-    let num = document.getElementById("pantalla");
-    if (num.value < 0) {
-      num.value = 0 - num.value;
-    } else {
-      num.value = num.value;
-    }
-    rellenar_info();
+  let num = document.getElementById("pantalla");
+  if (num.value < 0) {
+    num.value = 0 - num.value;
+  } else {
+    num.value = num.value;
   }
+  rellenar_info();
 }
 
 const fact = () => {
-  if (validar()) {
-    let num = document.getElementById("pantalla");
-    for (let i = num.value - 1; i > 0; i--) {
-      let aux = 1;
-      aux *= i;
-      num.value = num.value * aux;
-    }
-    rellenar_info();
+  let num = document.getElementById("pantalla");
+  for (let i = num.value - 1; i > 0; i--) {
+    let aux = 1;
+    aux *= i;
+    num.value = num.value * aux;
   }
+  rellenar_info();
 }
 
 let operador = "";
@@ -54,36 +48,28 @@ const guardaInput = (numInput) => {
 }
 
 const mul = () => {
-  if (validar()) {
-    guardaInput(Number(document.getElementById("pantalla").value));
-    total = document.getElementById("pantalla").value;
-    operador = "multiplicacion";
-    vaciar();
-    rellenar_info();
-  }
+  guardaInput(Number(document.getElementById("pantalla").value));
+  total = document.getElementById("pantalla").value;
+  operador = "multiplicacion";
+  vaciar();
+  rellenar_info();
 }
 
 const add = () => {
-  if (validar()) {
     guardaInput(Number(document.getElementById("pantalla").value));
     operador = "suma";
     vaciar();
     rellenar_info();
-  }
 }
 
 const eq = () => {
-
-  if (validar()) {
     guardaInput(Number(document.getElementById("pantalla").value));
     operador = "";
     document.getElementById("pantalla").value = total;
     rellenar_info();
-  }
 }
 
 const sumatorio = () => {
-  if (validar()) {
     let num = document.getElementById("pantalla");
     let lista = num.value.split(",");
     let i = 0;
@@ -94,7 +80,6 @@ const sumatorio = () => {
     }
     num.value = suma;
     rellenar_info();
-  }
 }
 
 const sortNumbers = (a, b) => {
@@ -107,30 +92,24 @@ const sortNumbers = (a, b) => {
   }
 }
 const ordenar = () => {
-  if (validar()) {
     let listaString = document.getElementById("pantalla").value;
     let arrayNumeros = listaString.split(",");
     document.getElementById("pantalla").value = arrayNumeros.sort(sortNumbers);
     rellenar_info();
-  }
 }
 
 const revertir = () => {
-  if (validar()) {
     let listaString = document.getElementById("pantalla").value;
     let arrayNumeros = listaString.split(",");
     document.getElementById("pantalla").value = arrayNumeros.reverse();
     rellenar_info();
-  }
 }
 const quitar = () => {
-  if (validar()) {
     let listaString = document.getElementById("pantalla").value;
     let arrayNumeros = listaString.split(",");
     arrayNumeros.pop();
     document.getElementById("pantalla").value = arrayNumeros;
     rellenar_info();
-  }
 }
 
 const rellenar_info = () => {
@@ -142,15 +121,4 @@ const rellenar_info = () => {
     document.getElementById("info").innerHTML = "Info: El resultado está entre 100 y 200";
   }
 }
-const validar = () => {
-  let listaString = document.getElementById("pantalla").value;
-  let arrayNumeros = listaString.split(",");
-  for (let i = 0; i < arrayNumeros.length; i++) {
-    let element = Number(arrayNumeros[i]);
-    if (Number.isNaN(element)) {
-      document.getElementById("pantalla").value = "Error";
-      return false;
-    }
-  }
-  return true;
-}
+
